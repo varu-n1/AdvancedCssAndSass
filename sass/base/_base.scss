@@ -1,0 +1,37 @@
+*,
+*::after,
+*::before{
+    margin: 0px;
+    padding: 0px;                                 /* for univaersal and body -- Good to initialize so Browser takes it accurately when opening our page and not applt its own default setting*/
+    box-sizing: inherit;
+}
+
+html{
+    font-size: 62.5%;                              /*Make our life easier 1rem = 10px, 0.625 * 16px = 10 px*/
+                               
+    @include respond(big-desktop){
+        font-size: 75%;                        //1rem = 9px  9/16 = 50%
+    }
+
+    @include respond(tab-land){
+        font-size: 56.25%;                        //1rem = 9px  9/16 = 50%
+    }
+
+    @include respond(tab-port){
+        font-size: 50%;                        //1rem = 9px  9/16 = 50%
+    }
+
+    @include respond(phone){
+        font-size: 40%;                       
+    }
+    
+}
+
+body{
+    box-sizing: border-box;
+    padding: 3rem;
+
+    @include respond(tab-port){
+        padding: 0;                       
+    }
+}
